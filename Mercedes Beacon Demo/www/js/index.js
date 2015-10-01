@@ -53,14 +53,14 @@ var app = {
 
                 //Login Facebook
                 //$(document).FaceGap(config);
-                beaconService.startScanForBeacons();
+                //beaconService.startScanForBeacons();
                 
                 //Callback Login
                 function _onLogin(event) {
                     if (event.status === 1) {
                         $(".received").text("Logged In");
                         
-                        beaconService.startScanForBeacons();
+                        //beaconService.startScanForBeacons();
 
                     } else {
                         logError("Error authenticating with Facebook");

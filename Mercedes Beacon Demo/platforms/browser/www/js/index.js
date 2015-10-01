@@ -34,6 +34,10 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         try {
+            setTimeout(function () {
+                navigator.splashscreen.hide();
+            }, 2000);
+
             setTimeout(function() {
                 app.receivedEvent('deviceready');
 
