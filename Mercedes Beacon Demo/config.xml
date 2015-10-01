@@ -39,7 +39,7 @@
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.splashscreen" version="0.2.3" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />
     <icon src="icon.png" />
