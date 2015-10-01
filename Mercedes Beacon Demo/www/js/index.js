@@ -36,7 +36,7 @@ var app = {
         try {
             setTimeout(function () {
                 navigator.splashscreen.hide();
-            }, 2000);
+            }, 1000);
 
             setTimeout(function() {
                 app.receivedEvent('deviceready');
