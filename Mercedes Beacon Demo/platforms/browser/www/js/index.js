@@ -34,9 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         try {
-            setTimeout(function () {
-                navigator.splashscreen.hide();
-            }, 2000);
+            //navigator.splashscreen.hide();
 
             setTimeout(function() {
                 app.receivedEvent('deviceready');
@@ -53,14 +51,14 @@ var app = {
 
                 //Login Facebook
                 //$(document).FaceGap(config);
-                beaconService.startScanForBeacons();
+                //beaconService.startScanForBeacons();
                 
                 //Callback Login
                 function _onLogin(event) {
                     if (event.status === 1) {
                         $(".received").text("Logged In");
                         
-                        beaconService.startScanForBeacons();
+                        //beaconService.startScanForBeacons();
 
                     } else {
                         logError("Error authenticating with Facebook");
