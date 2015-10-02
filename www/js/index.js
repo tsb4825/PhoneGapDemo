@@ -61,22 +61,23 @@ var app = {
                         //beaconService.startScanForBeacons();
 
                     } else {
-                        logError("Error authenticating with Facebook");
+                        log("Error authenticating with Facebook");
                     }
                 }
 
                 estimote.beacons.startRangingBeaconsInRegion(
                     {}, // Empty region matches all beacons.
                     function(result) {
-                        logError('*** Beacons ranged ***');
+                        log('*** Beacons ranged ***');
                         estimote.beacons.printObject(result);
+                        log(result);
                     },
                     function(errorMessage) {
-                        logError('Ranging error: ' + errorMessage);
+                        log('Ranging error: ' + errorMessage);
                     });
             }, 2000);
         } catch (e) {
-            logError(e);
+            log(e);
         }
     },
     // Update DOM on a Received Event
@@ -92,6 +93,6 @@ var app = {
     }
 };
 
-function logError(text) {
+function log(text) {
     $("#DebugLog").append(text + "<br>");
 }
