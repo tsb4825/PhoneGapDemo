@@ -68,11 +68,11 @@ var app = {
                 estimote.beacons.startRangingBeaconsInRegion(
                     {}, // Empty region matches all beacons.
                     function(result) {
-                        console.log('*** Beacons ranged ***');
+                        logError('*** Beacons ranged ***');
                         estimote.beacons.printObject(result);
                     },
                     function(errorMessage) {
-                        console.log('Ranging error: ' + errorMessage);
+                        logError('Ranging error: ' + errorMessage);
                     });
             }, 2000);
         } catch (e) {
