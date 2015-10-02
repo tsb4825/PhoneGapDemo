@@ -65,16 +65,22 @@ var app = {
                     }
                 }
 
-                estimote.beacons.startRangingBeaconsInRegion(
-                    {}, // Empty region matches all beacons.
-                    function(result) {
-                        log('*** Beacons ranged ***');
-                        estimote.beacons.printObject(result);
-                        log(result);
-                    },
-                    function(errorMessage) {
-                        log('Ranging error: ' + errorMessage);
+                estimote.beacons.requestAlwaysAuthorization(
+                    startRanging,
+                    function (errorMessage) {
+                        log('Beacon auth error: ' + errorMessage);
                     });
+
+                function startRanging() {
+                    estimote.beacons.startRangingBeaconsInRegion(
+                        {}, // Empty region matches all beacons.
+                        function(beaconInfo) {
+                            log(('Number of beacons discovered ' + beaconInfo.beacons.length));
+                        },
+                        function(errorMessage) {
+                            log('Ranging error: ' + errorMessage);
+                        });
+                }
             }, 2000);
         } catch (e) {
             log(e);
