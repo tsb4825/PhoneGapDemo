@@ -11,31 +11,22 @@ var beaconService = {
     ],
     startScanForBeacons: function() {
         try {
-            if (cordova.plugins) {
-                logError("cordova.plugins found");
-                if (cordova.plugins.locationManager) {
-                    logError("cordova.plugins.locationManager found");
-                } else {
-                    logError("cordova.plugins.locationManager not found");
-                }
-            } else {
-                logError("cordova.plugins not found");
-            }
             window.locationManager = cordova.plugins.locationManager;
 
             // The delegate object contains iBeacon callback functions.
             var delegate = new cordova.plugins.locationManager.Delegate();
 
-            delegate.didDetermineStateForRegion = function(pluginResult) {
+            delegate.didDetermineStateForRegion = function (pluginResult) {
                 //console.log('didDetermineStateForRegion: ' + JSON.stringify(pluginResult))
             }
 
-            delegate.didStartMonitoringForRegion = function(pluginResult) {
+            delegate.didStartMonitoringForRegion = function (pluginResult) {
                 //console.log('didStartMonitoringForRegion:' + JSON.stringify(pluginResult))
             }
 
-            delegate.didRangeBeaconsInRegion = function(pluginResult) {
-                didRangeBeaconsInRegion(pluginResult);
+            delegate.didRangeBeaconsInRegion = function (pluginResult) {
+                //console.log('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult))
+                this.didRangeBeaconsInRegion(pluginResult);
             }
 
             // Set the delegate object to use.
