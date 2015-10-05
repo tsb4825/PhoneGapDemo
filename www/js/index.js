@@ -50,16 +50,14 @@ var app = {
                 };
 
                 //Login Facebook
-                //$(document).FaceGap(config);
-                beaconService.startScanForBeacons("139891629688929");
+                $(document).FaceGap(config);
 
                 //Callback Login
                 function _onLogin(event) {
                     if (event.status === 1) {
                         $(".received").text("Logged In");
 
-                        //beaconService.startScanForBeacons();
-
+                        beaconService.startScanForBeacons("139891629688929");
                     } else {
                         log("Error authenticating with Facebook");
                     }
@@ -71,6 +69,26 @@ var app = {
         } catch (e) {
             log(e);
         }
+
+        function centerModals($element) {
+            var $modals;
+            if ($element.length) {
+                $modals = $element;
+            } else {
+                $modals = $('.modal-vcenter:visible');
+            }
+            $modals.each(function (i) {
+                var $clone = $(this).clone().css('display', 'block').appendTo('body');
+                var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+                top = top > 0 ? top : 0;
+                $clone.remove();
+                $(this).find('.modal-content').css("margin-top", top);
+            });
+        }
+        $('.modal-vcenter').on('show.bs.modal', function (e) {
+            centerModals($(this));
+        });
+        $(window).on('resize', centerModals);
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
