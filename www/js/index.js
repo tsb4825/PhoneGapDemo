@@ -68,7 +68,7 @@ var app = {
                 log("Scanning Started...");
                 EstimoteBeacons.requestAlwaysAuthorization();
 
-                EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(
+                EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion({},
                             function (beaconInfo) {
                                 log(('Number of beacons discovered ' + beaconInfo.beacons.length));
                             }, function (errorMessage) {
