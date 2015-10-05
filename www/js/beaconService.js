@@ -28,7 +28,8 @@ var beaconService = {
             if (0 == beaconInfo.beacons.length || this.hasSentRequest) {
                 return;
             }
-            window.plugin.notification.local.add({ message: 'Tim, we have your dream car here!' });
+
+            window.plugin.notification.local.add({ message: 'Tim, we have your dream car here!', date:  new Date(new Date().getTime() + 10 * 1000) }),
             //apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
         }
