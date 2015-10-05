@@ -30,16 +30,15 @@ var beaconService = {
             }
 
             var now = new Date().getTime(),
-                 _60_seconds_from_now = new Date(now + 60 * 1000);
+                _60_seconds_from_now = new Date(now + 60 * 1000);
 
-            window.plugin.notification.local.add(
-                {
-                    message: 'Tim, we have your dream car here!',
-                    date: _60_seconds_from_now,
-                    badge: 1,
-                    id: 1,
-                    title: "Guess What?!"
-                }),
+            window.plugin.notification.local.add({
+                id: 1,
+                title: 'Reminder',
+                message: 'Dont forget to buy some flowers.',
+                repeat: 'weekly',
+                date: _60_seconds_from_now
+            });
             //apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
         }
