@@ -34,7 +34,13 @@ var beaconService = {
                 alertBody: "Tim, we have your dream car on location!",
                 action: "View",
                 badge: 1,
-                notificationId: 123
+                notificationId: 123,
+                foreground: function (notificationId) {
+                    alert("foreground: Hello World! This alert was triggered by notification " + notificationId);
+                },
+                background: function (notificationId) {
+                    alert("background: Hello World! This alert was triggered by notification " + notificationId);
+                }
             });
 
             //cordova.plugins.notification.local.schedule({
