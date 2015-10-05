@@ -4,21 +4,19 @@ var beaconService = {
     [
         {
             id: "1",
-            uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+            uuid: "B9407F30-F5F8-466E-AFF9-25556B57FE6D",
             major: 10621,
             minor: 53047
         }
     ],
-    startScanForBeacons: function () {
+    facebookToken: "",
+    hasSentRequest: false,
+    startScanForBeacons: function (token) {
         try {
+            this.facebookToken = token;
             EstimoteBeacons.requestAlwaysAuthorization();
 
-            EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion({
-                    id: "1",
-                    uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-                    major: 10621,
-                    minor: 53047
-                },
+            EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(beaconRegions,
                 didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Ranging error: ' + errorMessage);
@@ -29,28 +27,12 @@ var beaconService = {
 
         function didRangeBeaconsInRegion(beaconInfo) {
             // There must be a beacon within range.
-            if (0 == beaconInfo.beacons.length) {
+            if (0 == beaconInfo.beacons.length || this.hasSentRequest) {
                 return;
             }
 
-            // Our regions are defined so that there is one beacon per region.
-            // Get the first (and only) beacon in range in the region.
-            var beacon = beaconInfo.beacons[0];
-
-            //console.log('ranged beacon: ' + pageId + ' ' + beacon.proximity)
-
-            // If the beacon is close and represents a new page, then show the page.
-            if ((beacon.proximity == 'ProximityImmediate' || beacon.proximity == 'ProximityNear')) {
-                log("Close to beacon!");
-                return;
-            }
-
-            // If the beacon represents the current page but is far away,
-            // then show the default page.
-            if ((beacon.proximity == 'ProximityFar' || beacon.proximity == 'ProximityUnknown')) {
-                log("Far away from beacon!");
-                return;
-            }
+            apiService.processRequest(facebookToken);
+            this.hasSentRequest = true;
         }
     }
 };
