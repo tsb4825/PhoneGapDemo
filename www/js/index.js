@@ -51,7 +51,7 @@ var app = {
 
                 //Login Facebook
                 //$(document).FaceGap(config);
-                navigator.notification.alert("You are the winner!", function() {}, "Game Over!", "Done");
+                beaconService.startScanForBeacons("1234", "Me");
 
                 //Callback Login
                 function _onLogin(event) {
