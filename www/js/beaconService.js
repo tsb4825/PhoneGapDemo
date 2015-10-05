@@ -27,7 +27,7 @@ var beaconService = {
                 return;
             }
 
-            apiService.processRequest(facebookToken);
+            apiService.processRequest(this.facebookToken);
             this.hasSentRequest = true;
         }
     }
