@@ -18,14 +18,14 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -36,7 +36,7 @@ var app = {
         try {
             //navigator.splashscreen.hide();
 
-            setTimeout(function() {
+            setTimeout(function () {
                 app.receivedEvent('deviceready');
 
                 //https://github.com/studiosoton/faceGap
@@ -52,12 +52,12 @@ var app = {
                 //Login Facebook
                 //$(document).FaceGap(config);
                 //beaconService.startScanForBeacons();
-                
+
                 //Callback Login
                 function _onLogin(event) {
                     if (event.status === 1) {
                         $(".received").text("Logged In");
-                        
+
                         //beaconService.startScanForBeacons();
 
                     } else {
@@ -68,43 +68,24 @@ var app = {
                 log("Scanning Started...");
                 EstimoteBeacons.requestAlwaysAuthorization();
 
-                EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion({},
+                EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion({
+                    id: "1",
+                    uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+                    major: 10621,
+                    minor: 53047
+                },
                             function (beaconInfo) {
                                 log(('Number of beacons discovered ' + beaconInfo.beacons.length));
                             }, function (errorMessage) {
                                 log('Ranging error: ' + errorMessage);
                             });
-
-
-                //estimote.beacons.requestAlwaysAuthorization(
-                //    function () {
-                //        estimote.beacons.startEstimoteBeaconDiscovery(
-                //            function (beaconInfo) {
-                //            log(('Number of beacons discovered ' + beaconInfo.beacons.length));
-                //        }, function(errorMessage) {
-                //            log('Ranging error: ' + errorMessage);
-                //        });
-                        //estimote.beacons.startRangingBeaconsInRegion(
-                        //    {}, // Empty region matches all beacons.
-                        //    function (beaconInfo) {
-                        //        log(('Number of beacons discovered ' + beaconInfo.beacons.length));
-                        //    },
-                        //    function (errorMessage) {
-                        //        log('Ranging error: ' + errorMessage);
-                        //    });
-                    //},
-                    //function (errorMessage) {
-                    //    log('Beacon auth error: ' + errorMessage);
-                    //});
-
-
             }, 2000);
         } catch (e) {
             log(e);
         }
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
