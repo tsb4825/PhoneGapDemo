@@ -65,22 +65,39 @@ var app = {
                     }
                 }
 
-                estimote.beacons.requestAlwaysAuthorization(
-                    startRanging,
-                    function (errorMessage) {
-                        log('Beacon auth error: ' + errorMessage);
-                    });
+                log("Scanning Started...");
+                EstimoteBeacons.requestAlwaysAuthorization();
 
-                function startRanging() {
-                    estimote.beacons.startRangingBeaconsInRegion(
-                        {}, // Empty region matches all beacons.
-                        function(beaconInfo) {
-                            log(('Number of beacons discovered ' + beaconInfo.beacons.length));
-                        },
-                        function(errorMessage) {
-                            log('Ranging error: ' + errorMessage);
-                        });
-                }
+                EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(
+                            function (beaconInfo) {
+                                log(('Number of beacons discovered ' + beaconInfo.beacons.length));
+                            }, function (errorMessage) {
+                                log('Ranging error: ' + errorMessage);
+                            });
+
+
+                //estimote.beacons.requestAlwaysAuthorization(
+                //    function () {
+                //        estimote.beacons.startEstimoteBeaconDiscovery(
+                //            function (beaconInfo) {
+                //            log(('Number of beacons discovered ' + beaconInfo.beacons.length));
+                //        }, function(errorMessage) {
+                //            log('Ranging error: ' + errorMessage);
+                //        });
+                        //estimote.beacons.startRangingBeaconsInRegion(
+                        //    {}, // Empty region matches all beacons.
+                        //    function (beaconInfo) {
+                        //        log(('Number of beacons discovered ' + beaconInfo.beacons.length));
+                        //    },
+                        //    function (errorMessage) {
+                        //        log('Ranging error: ' + errorMessage);
+                        //    });
+                    //},
+                    //function (errorMessage) {
+                    //    log('Beacon auth error: ' + errorMessage);
+                    //});
+
+
             }, 2000);
         } catch (e) {
             log(e);
