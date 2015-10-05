@@ -1,7 +1,7 @@
 var apiService = {
     processRequest: function (token, name) {
         $.ajax({
-            url: "https://targetbaseapi-dev-central.azurewebsites.net/api/query/AGI/processrequest",
+            url: "http://tbkitewheel.cloudapp.net:8084/ProvWeb/Listener/processrequest",
             beforeSend: function (xhrObj) {
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type", "application/json");

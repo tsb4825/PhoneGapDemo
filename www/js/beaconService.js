@@ -14,7 +14,7 @@ var beaconService = {
             this.name = name;
             EstimoteBeacons.requestAlwaysAuthorization();
 
-            EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
+            EstimoteBeacons.startMonitoringForRegion(this.beaconRegions,
                 didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Ranging error: ' + errorMessage);
@@ -28,8 +28,8 @@ var beaconService = {
             if (0 == beaconInfo.beacons.length || this.hasSentRequest) {
                 return;
             }
-
-            apiService.processRequest(this.facebookToken, this.name);
+            window.plugin.notification.local.add({ message: 'Tim, we have your dream car here!' });
+            //apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
         }
     }

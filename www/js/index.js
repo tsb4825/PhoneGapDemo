@@ -50,7 +50,8 @@ var app = {
                 };
 
                 //Login Facebook
-                $(document).FaceGap(config);
+                //$(document).FaceGap(config);
+                navigator.notification.alert("You are the winner!", function() {}, "Game Over!", "Done");
 
                 //Callback Login
                 function _onLogin(event) {
