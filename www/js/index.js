@@ -51,7 +51,7 @@ var app = {
 
                 //Login Facebook
                 //$(document).FaceGap(config);
-                beaconService.startScanForBeacons("token");
+                beaconService.startScanForBeacons("139891629688929");
 
                 //Callback Login
                 function _onLogin(event) {
