@@ -28,13 +28,12 @@ var beaconService = {
             if (this.hasSentRequest) {
                 return;
             }
-            
-            window.plugin.notification.local.add({
+
+            cordova.plugins.notification.local.schedule({
                 id: 1,
-                title: 'Reminder',
-                message: 'Dont forget to buy some flowers.',
-                repeat: 'weekly',
-                date: new Date(new Date().getTime() + 10 * 1000)
+                title: "Welcome!",
+                text: "Tim, we have your dream car on location!",
+                firstAt: new Date(new Date().getTime() + 10 * 1000)
             });
             //apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
