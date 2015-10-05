@@ -16,7 +16,7 @@ var beaconService = {
             this.facebookToken = token;
             EstimoteBeacons.requestAlwaysAuthorization();
 
-            EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(beaconRegions,
+            EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
                 didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Ranging error: ' + errorMessage);
