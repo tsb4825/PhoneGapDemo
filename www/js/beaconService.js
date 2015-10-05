@@ -34,22 +34,8 @@ var beaconService = {
                 alertBody: "Tim, we have your dream car on location!",
                 action: "View",
                 badge: 1,
-                notificationId: 123,
-                foreground: function (notificationId) {
-                    alert("foreground: Hello World! This alert was triggered by notification " + notificationId);
-                },
-                background: function (notificationId) {
-                    alert("background: Hello World! This alert was triggered by notification " + notificationId);
-                }
+                notificationId: 123
             });
-
-            //cordova.plugins.notification.local.schedule({
-            //    id: 1,
-            //    title: "Welcome!",
-            //    text: "Tim, we have your dream car on location!",
-            //    firstAt: new Date(new Date().getTime() + 10 * 1000)
-            //});
-            //apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
         }
     }
