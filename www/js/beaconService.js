@@ -29,7 +29,10 @@ var beaconService = {
                 return;
             }
 
-            window.plugin.notification.local.add({ message: 'Tim, we have your dream car here!', date:  new Date(new Date().getTime() + 10 * 1000) }),
+            var now = new Date().getTime(),
+                 _60_seconds_from_now = new Date(now + 60 * 1000);
+
+            window.plugin.notification.local.add({ message: 'Tim, we have your dream car here!', date: _60_seconds_from_now }),
             //apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
         }
