@@ -51,7 +51,7 @@ var app = {
 
                 //Login Facebook
                 //$(document).FaceGap(config);
-                //beaconService.startScanForBeacons();
+                beaconService.startScanForBeacons();
 
                 //Callback Login
                 function _onLogin(event) {
@@ -66,19 +66,7 @@ var app = {
                 }
 
                 log("Scanning Started...");
-                EstimoteBeacons.requestAlwaysAuthorization();
-
-                EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion({
-                    id: "1",
-                    uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-                    major: 10621,
-                    minor: 53047
-                },
-                            function (beaconInfo) {
-                                log(('Number of beacons discovered ' + beaconInfo.beacons.length));
-                            }, function (errorMessage) {
-                                log('Ranging error: ' + errorMessage);
-                            });
+                
             }, 2000);
         } catch (e) {
             log(e);
