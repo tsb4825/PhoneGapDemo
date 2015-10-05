@@ -32,7 +32,14 @@ var beaconService = {
             var now = new Date().getTime(),
                  _60_seconds_from_now = new Date(now + 60 * 1000);
 
-            window.plugin.notification.local.add({ message: 'Tim, we have your dream car here!', date: _60_seconds_from_now }),
+            window.plugin.notification.local.add(
+                {
+                    message: 'Tim, we have your dream car here!',
+                    date: _60_seconds_from_now,
+                    badge: 1,
+                    id: 1,
+                    title: "Guess What?!"
+                }),
             //apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
         }
