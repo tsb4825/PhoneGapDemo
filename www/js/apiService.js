@@ -1,5 +1,5 @@
 var apiService = {
-    processRequest: function (token) {
+    processRequest: function (token, name) {
         $.ajax({
             url: "https://targetbaseapi-dev-central.azurewebsites.net/api/query/AGI/processrequest",
             beforeSend: function (xhrObj) {
@@ -9,10 +9,10 @@ var apiService = {
             },
             type: "POST",
             // Request body
-            data: { customerId: " + token + " }
+            data: { customerId: token }
         }).done(function (data) {
             log("Success calling api process request");
-            $("#modalTitle").text("Welcome Tim!");
+            $("#modalTitle").text("Welcome " + name + "!");
             $("#modalBody").text("Your Mercedes white C300 with black leather is at this store!");
             $("#btnNotifications").show();
         })

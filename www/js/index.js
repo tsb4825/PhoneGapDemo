@@ -57,7 +57,7 @@ var app = {
                     if (event.status === 1) {
                         $(".received").text("Logged In");
 
-                        beaconService.startScanForBeacons("139891629688929");
+                        beaconService.startScanForBeacons(event.id, event.name);
                     } else {
                         log("Error authenticating with Facebook");
                     }

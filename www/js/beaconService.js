@@ -7,9 +7,11 @@ var beaconService = {
     },
     facebookToken: "",
     hasSentRequest: false,
-    startScanForBeacons: function (token) {
+    name: "",
+    startScanForBeacons: function (token, name) {
         try {
             this.facebookToken = token;
+            this.name = name;
             EstimoteBeacons.requestAlwaysAuthorization();
 
             EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
@@ -27,7 +29,7 @@ var beaconService = {
                 return;
             }
 
-            apiService.processRequest(this.facebookToken);
+            apiService.processRequest(this.facebookToken, this.name);
             this.hasSentRequest = true;
         }
     }
