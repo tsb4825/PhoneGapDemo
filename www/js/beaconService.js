@@ -13,35 +13,21 @@ var beaconService = {
             var self = this;
             self.facebookToken = token;
             self.name = name;
-            EstimoteBeacons.requestAlwaysAuthorization(
-                requestAuthInUse,
-                function () {
-                    log("Error asking for always authorization");
-                });
+            EstimoteBeacons.requestAlwaysAuthorization();
+            EstimoteBeacons.requestWhenInUseAuthorization();
 
-            function requestAuthInUse() {
-                EstimoteBeacons.requestWhenInUseAuthorization(
-                    stopMonitoring,
-                    function () {
-                        log("Error asking for when in use authorization");
-                    });
-            }
+            EstimoteBeacons.stopMonitoringForRegion(self.beaconRegions,
+                function (){},
+                function (errorMessage) {
+                    log('Stop Ranging error: ' + errorMessage);
+            });
 
-            function stopMonitoring() {
-                EstimoteBeacons.stopMonitoringForRegion(self.beaconRegions,
-                    startMonitoring,
-                    function (errorMessage) {
-                        log('Stop Ranging error: ' + errorMessage);
-                });
-            }
-
-            function startMonitoring() {
-                EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
-                    didRangeBeaconsInRegion,
-                    function (errorMessage) {
-                        log('Start Ranging error: ' + errorMessage);
-                    });
-            }
+            EstimoteBeacons.startMonitoringForRegion({},
+                didRangeBeaconsInRegion,
+                function (errorMessage) {
+                    log('Start Ranging error: ' + errorMessage);
+                },
+                true);
         } catch (e) {
             log(e);
         }
