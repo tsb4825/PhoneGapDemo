@@ -22,7 +22,8 @@ var beaconService = {
                     log('Stop Ranging error: ' + errorMessage);
             });
 
-            EstimoteBeacons.startMonitoringForRegion({},
+            //EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
+            EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions, 
                 didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Start Ranging error: ' + errorMessage);
