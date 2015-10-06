@@ -1,9 +1,9 @@
 // JavaScript source code
 var beaconService = {
     beaconRegions: {
-            uuid: "B9407F30-F5F8-466E-AFF9-25556B57FE6D",
-            major: 10621,
-            minor: 53047
+        uuid: "B9407F30-F5F8-466E-AFF9-25556B57FE6D",
+        major: 10621,
+        minor: 53047
     },
     facebookToken: "",
     hasSentRequest: false,
@@ -13,21 +13,35 @@ var beaconService = {
             var self = this;
             self.facebookToken = token;
             self.name = name;
-            EstimoteBeacons.requestAlwaysAuthorization();
-            EstimoteBeacons.requestWhenInUseAuthorization();
-
-            EstimoteBeacons.stopMonitoringForRegion({},
-            didRangeBeaconsInRegion,
-                function (errorMessage) {
-                    log('Stop Ranging error: ' + errorMessage);
+            EstimoteBeacons.requestAlwaysAuthorization(
+                requestAuthInUse,
+                function () {
+                    log("Error asking for always authorization");
                 });
 
-            //EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(self.beaconRegions,
-            EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
-            didRangeBeaconsInRegion,
-                function (errorMessage) {
-                    log('Start Ranging error: ' + errorMessage);
+            function requestAuthInUse() {
+                EstimoteBeacons.requestWhenInUseAuthorization(
+                    stopMonitoring,
+                    function () {
+                        log("Error asking for when in use authorization");
+                    });
+            }
+
+            function stopMonitoring() {
+                EstimoteBeacons.stopMonitoringForRegion({},
+                    startMonitoring,
+                    function (errorMessage) {
+                        log('Stop Ranging error: ' + errorMessage);
                 });
+            }
+
+            function startMonitoring() {
+                EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
+                    didRangeBeaconsInRegion,
+                    function (errorMessage) {
+                        log('Start Ranging error: ' + errorMessage);
+                    });
+            }
         } catch (e) {
             log(e);
         }
