@@ -46,7 +46,7 @@
       <param name="AZME_IOS_APPID" value="cud000012" />
       <param name="AZME_IOS_REACH_ICON" value="" />
       <param name="AZME_REDIRECT_URL" value="" />
-      <param name="AZME_ENABLE_LOG" value="false" />
+      <param name="AZME_ENABLE_LOG" value="true" />
     </gap:plugin>
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
