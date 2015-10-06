@@ -16,7 +16,7 @@ var beaconService = {
             EstimoteBeacons.requestAlwaysAuthorization();
             EstimoteBeacons.requestWhenInUseAuthorization();
 
-            EstimoteBeacons.stopMonitoringForRegion(self.beaconRegions,
+            EstimoteBeacons.stopMonitoringForRegion({},
                 function (){},
                 function (errorMessage) {
                     log('Stop Ranging error: ' + errorMessage);
