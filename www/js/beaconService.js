@@ -42,10 +42,13 @@ var beaconService = {
 
             window.plugins.localNotification.add({
                 fireDate: Math.round(new Date().getTime() / 1000 + 5),
-                alertBody: "Tim, we have your dream car on location!",
+                alertBody: "Tim, we have your white C300 with black leather here!",
                 action: "View",
                 badge: 1,
-                notificationId: 123
+                notificationId: 123,
+                foreground: function (notificationId) {
+                    alert("Tim, we have your white C300 with black leather here!");
+                },
             });
 
             //apiService.processRequest(self.facebookToken, self.name);
