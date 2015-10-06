@@ -15,11 +15,17 @@ var beaconService = {
             self.name = name;
             EstimoteBeacons.requestAlwaysAuthorization();
 
+            EstimoteBeacons.stopMonitoringForRegion({},
+            didRangeBeaconsInRegion,
+                function (errorMessage) {
+                    log('Stop Ranging error: ' + errorMessage);
+                });
+
             //EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(self.beaconRegions,
             EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
             didRangeBeaconsInRegion,
                 function (errorMessage) {
-                    log('Ranging error: ' + errorMessage);
+                    log('Start Ranging error: ' + errorMessage);
                 });
         } catch (e) {
             log(e);
