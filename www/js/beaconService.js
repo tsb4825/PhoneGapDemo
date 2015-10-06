@@ -14,6 +14,7 @@ var beaconService = {
             self.facebookToken = token;
             self.name = name;
             EstimoteBeacons.requestAlwaysAuthorization();
+            EstimoteBeacons.requestWhenInUseAuthorization();
 
             EstimoteBeacons.stopMonitoringForRegion({},
             didRangeBeaconsInRegion,
