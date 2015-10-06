@@ -15,9 +15,9 @@ var beaconService = {
             this.hasSentRequest = false;
             EstimoteBeacons.requestAlwaysAuthorization();
 
-            //EstimoteBeacons.startMonitoringForRegion(this.beaconRegions,
-            EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
-                didRangeBeaconsInRegion,
+            //EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
+            EstimoteBeacons.startMonitoringForRegion(this.beaconRegions,
+            didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Ranging error: ' + errorMessage);
                 });
@@ -26,24 +26,22 @@ var beaconService = {
         }
 
         function didRangeBeaconsInRegion(state) {
-            setTimeout(function() {
-                // There must be a beacon within range.
-                if (this.hasSentRequest) {
-                    return;
-                }
+            // There must be a beacon within range.
+            if (this.hasSentRequest) {
+                return;
+            }
 
-                window.plugins.localNotification.add({
-                    fireDate: Math.round(new Date().getTime() / 1000 + 5),
-                    alertBody: "Tim, we have your dream car on location!",
-                    action: "View",
-                    badge: 1,
-                    notificationId: 123
-                });
+            window.plugins.localNotification.add({
+                fireDate: Math.round(new Date().getTime() / 1000 + 5),
+                alertBody: "Tim, we have your dream car on location!",
+                action: "View",
+                badge: 1,
+                notificationId: 123
+            });
 
-                //apiService.processRequest(this.facebookToken, this.name);
+            //apiService.processRequest(this.facebookToken, this.name);
 
-                this.hasSentRequest = true;
-            }, 5000);
+            this.hasSentRequest = true;
         }
     }
 };
