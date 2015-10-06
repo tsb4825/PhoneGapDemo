@@ -39,6 +39,7 @@
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="ptdev.makingwaves2.estimotes" />
     <gap:plugin name="com.simplec.plugins.localnotification" version="0.3.5" />
+    <gap:plugin name="cordova-plugin-ms-azure-mobile-engagement" />
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />

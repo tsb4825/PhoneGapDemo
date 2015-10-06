@@ -48,7 +48,7 @@ var beaconService = {
                 notificationId: 123,
                 foreground: function (notificationId) {
                     alert("Tim, we have your white C300 with black leather here!");
-                },
+                }
             });
 
             //apiService.processRequest(self.facebookToken, self.name);
