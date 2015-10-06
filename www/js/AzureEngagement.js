@@ -5,7 +5,7 @@
  */
 
 
-module.exports = {
+var AzureEngagement = {
 
     pluginName : 'AzureEngagement',
     pluginVersion : '2.1.1',
