@@ -36,6 +36,9 @@ var beaconService = {
                 badge: 1,
                 notificationId: 123
             });
+
+            //apiService.processRequest(this.facebookToken, this.name);
+
             this.hasSentRequest = true;
         }
     }
