@@ -15,8 +15,8 @@ var beaconService = {
             this.hasSentRequest = false;
             EstimoteBeacons.requestAlwaysAuthorization();
 
-            //EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
-            EstimoteBeacons.startMonitoringForRegion(this.beaconRegions,
+            //EstimoteBeacons.startMonitoringForRegion(this.beaconRegions,
+            EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
                 didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Ranging error: ' + errorMessage);
