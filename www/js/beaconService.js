@@ -10,13 +10,13 @@ var beaconService = {
     name: "",
     startScanForBeacons: function (token, name) {
         try {
-            this.facebookToken = token;
-            this.name = name;
-            this.hasSentRequest = false;
+            var self = this;
+            self.facebookToken = token;
+            self.name = name;
             EstimoteBeacons.requestAlwaysAuthorization();
 
-            //EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(this.beaconRegions,
-            EstimoteBeacons.startMonitoringForRegion(this.beaconRegions,
+            //EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(self.beaconRegions,
+            EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
             didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Ranging error: ' + errorMessage);
@@ -26,8 +26,9 @@ var beaconService = {
         }
 
         function didRangeBeaconsInRegion(state) {
+            var self = this;
             // There must be a beacon within range.
-            if (this.hasSentRequest) {
+            if (self.hasSentRequest) {
                 return;
             }
 
@@ -39,9 +40,9 @@ var beaconService = {
                 notificationId: 123
             });
 
-            //apiService.processRequest(this.facebookToken, this.name);
+            //apiService.processRequest(self.facebookToken, self.name);
 
-            this.hasSentRequest = true;
+            self.hasSentRequest = true;
         }
     }
 };
