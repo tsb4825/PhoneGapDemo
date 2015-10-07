@@ -55,14 +55,6 @@ var app = {
                 //$(document).FaceGap(config);
                 //window.plugins.localNotification.cancelAll(function () { });
                 //window.plugins.localNotification.setBadgeNumber(0);
-                //cordova.plugins.notification.local.schedule({
-                //    id: 1,
-                //    title: "Your car is here!",
-                //    text: "Tim, we have your white C300 with black leather here!",
-                //    firstAt: Math.round(new Date().getTime() / 1000 + 5),
-                //    sound: "file://beep.caf",
-                //    icon: "file://C300.jpg"
-                //});
 
                 beaconService.startScanForBeacons("1234", "Me");
 
