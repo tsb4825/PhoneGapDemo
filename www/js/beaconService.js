@@ -23,7 +23,8 @@ var beaconService = {
             });
 
             //EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions,
-            EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
+            // fix for ios 9 until the plugin can be updated
+            EstimoteBeacons.startSecureMonitoringForRegion(self.beaconRegions,
                 didRangeBeaconsInRegion,
                 function (errorMessage) {
                     log('Start Ranging error: ' + errorMessage);
