@@ -53,8 +53,6 @@ var app = {
 
                 //Login Facebook
                 //$(document).FaceGap(config);
-                //window.plugins.localNotification.cancelAll(function () { });
-                //window.plugins.localNotification.setBadgeNumber(0);
 
                 beaconService.startScanForBeacons("1234", "Me");
 
