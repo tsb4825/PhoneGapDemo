@@ -39,18 +39,18 @@
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="ptdev.makingwaves2.estimotes" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" />
-    <icon src="res/icon/ios/mercedes-benz-logo180x180" />
+    <icon src="res/icon/ios/mercedes-benz-logo180x180.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
     <icon gap:platform="blackberry" src="www/res/icon/blackberry/icon-80.png" />
     <icon gap:platform="blackberry" gap:state="hover" src="www/res/icon/blackberry/icon-80.png" />
-    <icon gap:platform="ios" height="57" src="res/icon/ios/mercedes-benz-logo57x57" width="57" />
-    <icon gap:platform="ios" height="72" src="res/icon/ios/mercedes-benz-logo72x72" width="72" />
-    <icon gap:platform="ios" height="114" src="res/icon/ios/mercedes-benz-logo114x114" width="114" />
-    <icon gap:platform="ios" height="144" src="res/icon/ios/mercedes-benz-logo144x144" width="144" />
-    <icon gap:platform="ios" height="180" src="res/icon/ios/mercedes-benz-logo180x180" width="180" />
+    <icon gap:platform="ios" height="57" src="res/icon/ios/mercedes-benz-logo57x57.png" width="57" />
+    <icon gap:platform="ios" height="72" src="res/icon/ios/mercedes-benz-logo72x72.png" width="72" />
+    <icon gap:platform="ios" height="114" src="res/icon/ios/mercedes-benz-logo114x114.png" width="114" />
+    <icon gap:platform="ios" height="144" src="res/icon/ios/mercedes-benz-logo144x144.png" width="144" />
+    <icon gap:platform="ios" height="180" src="res/icon/ios/mercedes-benz-logo180x180.png" width="180" />
     <icon gap:platform="webos" src="www/res/icon/webos/icon-64.png" />
     <icon gap:platform="winphone" src="www/res/icon/windows-phone/icon-48.png" />
     <icon gap:platform="winphone" gap:role="background" src="www/res/icon/windows-phone/icon-173-tile.png" />
@@ -60,12 +60,12 @@
     <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/screen-xhdpi-portrait.png" />
     <gap:splash gap:platform="blackberry" src="www/res/screen/blackberry/screen-225.png" />
     <gap:splash gap:platform="ios" height="480" src="res/screen/ios/mercedes-logo.png" width="320" />
-    <gap:splash gap:platform="ios" height="960" src="res/screen/ios/MercedesLogo640x960" width="640" />
-    <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/MercedesLogo640x1136" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/MercedesLogo768x1024" width="768" />
+    <gap:splash gap:platform="ios" height="960" src="res/screen/ios/MercedesLogo640x960.png" width="640" />
+    <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/MercedesLogo640x1136.png" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/MercedesLogo768x1024.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/mercedes-logo.png" width="1024" />
-    <gap:splash gap:platform="ios" height="1334" src="res/screen/ios/MercedesLogo750x1334" width="750" />
-    <gap:splash gap:platform="ios" height="2208" src="res/screen/ios/MercedesLogo1242x2208" width="1242" />
+    <gap:splash gap:platform="ios" height="1334" src="res/screen/ios/MercedesLogo750x1334.png" width="750" />
+    <gap:splash gap:platform="ios" height="2208" src="res/screen/ios/MercedesLogo1242x2208.png" width="1242" />
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
