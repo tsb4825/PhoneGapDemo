@@ -34,10 +34,10 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         try {
-            //navigator.splashscreen.hide();
 
             setTimeout(function () {
                 app.receivedEvent('deviceready');
+                navigator.splashscreen.hide();
                 //AzureEngagement.registerForPushNotification();
                 //AzureEngagement.startActivity("loaded", {});
 
