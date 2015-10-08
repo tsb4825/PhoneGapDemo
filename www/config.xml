@@ -15,7 +15,7 @@
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="auto-hide-splash-screen" value="false" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
@@ -32,14 +32,14 @@
     <gap:plugin name="org.apache.cordova.file-transfer" />
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.globalization" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />S
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="ptdev.makingwaves2.estimotes" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" />
-    <icon src="res/icon/ios/mercedes-benz-logo144x144" />
+    <icon src="res/icon/ios/mercedes-benz-logo180x180" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
@@ -50,6 +50,7 @@
     <icon gap:platform="ios" height="72" src="res/icon/ios/Mercedes-Benz_logo.png" width="72" />
     <icon gap:platform="ios" height="114" src="res/icon/ios/Mercedes-Benz_logo.png" width="114" />
     <icon gap:platform="ios" height="144" src="res/icon/ios/mercedes-benz-logo144x144" width="144" />
+    <icon gap:platform="ios" height="180" src="res/icon/ios/mercedes-benz-logo180x180" width="180" />
     <icon gap:platform="webos" src="www/res/icon/webos/icon-64.png" />
     <icon gap:platform="winphone" src="www/res/icon/windows-phone/icon-48.png" />
     <icon gap:platform="winphone" gap:role="background" src="www/res/icon/windows-phone/icon-173-tile.png" />
@@ -81,6 +82,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <engine name="browser" spec="~4.0.0" />
     <engine name="ios" spec="~3.9.1" />
+    <engine name="browser" spec="~4.0.0" />
 </widget>
