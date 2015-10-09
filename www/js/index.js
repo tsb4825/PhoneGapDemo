@@ -52,9 +52,9 @@ var app = {
                 };
 
                 //Login Facebook
-                //$(document).FaceGap(config);
+                $(document).FaceGap(config);
 
-                beaconService.startScanForBeacons("1234", "Me");
+                //beaconService.startScanForBeacons("1234", "Me");
 
                 //Callback Login
                 function _onLogin(event) {
