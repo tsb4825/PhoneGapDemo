@@ -33,7 +33,8 @@ var beaconService = {
             //EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions,
             //EstimoteBeacons.startSecureMonitoringForRegion(self.beaconRegions,
             //EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
-            EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions,
+            //EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions,
+            EstimoteBeacons.startSecureMonitoringForRegion(self.beaconRegions,
                 didRangeBeaconsInRegion, function(errorMessage) { log('Start Ranging error: ' + errorMessage); }, true);
         }
 
