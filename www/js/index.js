@@ -37,8 +37,8 @@ var app = {
             setTimeout(function () {
                 app.receivedEvent('deviceready');
                 navigator.splashscreen.hide();
-                //AzureEngagement.registerForPushNotification();
-                //AzureEngagement.startActivity("loaded", {});
+                AzureEngagement.registerForPushNotification();
+                AzureEngagement.startActivity("loaded", {});
 
                 //https://github.com/studiosoton/faceGap
                 //Config Plugin
