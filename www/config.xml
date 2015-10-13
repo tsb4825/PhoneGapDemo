@@ -39,6 +39,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" />
+	<gap:plugin name="ptdev.makingwaves2.estimotes" />
     <icon src="res/icon/ios/mercedes-benz-logo180x180.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
