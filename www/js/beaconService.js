@@ -36,11 +36,10 @@ var beaconService = {
         }
 
         function startScanningForBeacons() {
-            //EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions,
             //EstimoteBeacons.startSecureMonitoringForRegion(self.beaconRegions,
             //EstimoteBeacons.startMonitoringForRegion(self.beaconRegions,
             //EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions,
-            EstimoteBeacons.startSecureMonitoringForRegion(self.beaconRegions,
+            EstimoteBeacons.startRangingBeaconsInRegion(self.beaconRegions,
                 didRangeBeaconsInRegion, function (errorMessage) { log('Start Ranging error: ' + errorMessage); }, true);
             log("Start Scanning");
         }
