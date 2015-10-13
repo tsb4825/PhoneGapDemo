@@ -108,5 +108,5 @@ var app = {
 };
 
 function log(text) {
-    //$("#DebugLog").append(text + "<br>");
+    $("#DebugLog").append(text + "<br>");
 }
