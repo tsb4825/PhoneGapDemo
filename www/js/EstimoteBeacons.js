@@ -53,7 +53,7 @@ var exec = cordova.require('cordova/exec');
 var estimote = estimote || {};
 
 // Export module.
-module.exports = estimote;
+//module.exports = estimote;
 
 /**
  * Submodule for beacons.
