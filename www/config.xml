@@ -41,10 +41,10 @@
     <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" />
 	  <gap:plugin name="ptdev.makingwaves2.estimotes" />
     <gap:plugin name="cordova-plugin-ms-azure-mobile-engagement" source="npm" version="1.0.0">
-      <param name="AZME_IOS_CONNECTION_STRING" value="Endpoint=DeDemo-TestApp-Collection.device.mobileengagement.windows.net;SdkKey=63a56f37056f8f960a39fbeafa8f15c7;AppId=cud000012" />
-      <param name="AZME_IOS_COLLECTION" value="DeDemo-TestApp-Collection" />
-      <param name="AZME_IOS_SDKKEY" value="63a56f37056f8f960a39fbeafa8f15c7" />
-      <param name="AZME_IOS_APPID" value="cud000012" />
+      <param name="AZME_IOS_CONNECTION_STRING" value="Endpoint=DeDemo-TestApp1-Collection.device.mobileengagement.windows.net;SdkKey=abee16759099eb43862c3b6ba4a29a9d;AppId=cud000017" />
+      <param name="AZME_IOS_COLLECTION" value="DeDemo-TestApp1-Collection" />
+      <param name="AZME_IOS_SDKKEY" value="abee16759099eb43862c3b6ba4a29a9d" />
+      <param name="AZME_IOS_APPID" value="cud000017" />
       <param name="AZME_IOS_REACH_ICON" value="" />
       <param name="AZME_REDIRECT_URL" value="" />
       <param name="AZME_ENABLE_LOG" value="true" />
