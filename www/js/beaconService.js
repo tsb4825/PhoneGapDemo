@@ -21,18 +21,20 @@ var beaconService = {
                     log('Stop Ranging error: ' + errorMessage);
                 });
 
-            EstimoteBeacons.requestAlwaysAuthorization(requestInUseAuthorization, log);
+            //EstimoteBeacons.requestAlwaysAuthorization(requestInUseAuthorization, log);
+            EstimoteBeacons.requestAlwaysAuthorization();
+            EstimoteBeacons.requestAlwaysAuthorization();
 
-            if (!self.wasAuthorizationCalled) {
+            //if (!self.wasAuthorizationCalled) {
                 startScanningForBeacons();
-            }
+            //}
         } catch (e) {
             log(e);
         }
 
         function requestInUseAuthorization() {
             self.wasAuthorizationCalled = true;
-            EstimoteBeacons.requestWhenInUseAuthorization(startScanningForBeacons,log);
+            EstimoteBeacons.requestAlwaysAuthorization(startScanningForBeacons,log);
         }
 
         function startScanningForBeacons() {
