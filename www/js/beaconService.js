@@ -8,6 +8,7 @@ var beaconService = {
     facebookToken: "",
     hasSentRequest: false,
     name: "",
+    wasAuthorizationCalled: false,
     startScanForBeacons: function (token, name) {
         try {
             var self = this;
@@ -20,12 +21,17 @@ var beaconService = {
                     log('Stop Ranging error: ' + errorMessage);
                 });
 
-            EstimoteBeacons.requestAlwaysAuthorization(requestInUseAuthorization,log);
+            EstimoteBeacons.requestAlwaysAuthorization(requestInUseAuthorization, log);
+
+            if (!wasAuthorizationCalled) {
+                startScanningForBeacons();
+            }
         } catch (e) {
             log(e);
         }
 
         function requestInUseAuthorization() {
+            wasAuthorizationCalled = true;
             EstimoteBeacons.requestWhenInUseAuthorization(startScanningForBeacons,log);
         }
 
