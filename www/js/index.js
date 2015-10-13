@@ -37,9 +37,12 @@ var app = {
             setTimeout(function () {
                 app.receivedEvent('deviceready');
                 navigator.splashscreen.hide();
-                //AzureEngagement.registerForPushNotification();
+                AzureEngagement.registerForPushNotification(function() { log("Azure Register: successful"); },
+                function(e) {
+                    log("Azure Register failed: " + e);
+                });
                 AzureEngagement.startActivity("loaded", {},
-                    function () { log("message sent"); },
+                    function () { log("Azure Activity: Message sent"); },
                     function(e) {
                          log("Azure activity failed: " + e);
                     });
