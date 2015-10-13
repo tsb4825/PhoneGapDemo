@@ -34,7 +34,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         try {
-
             setTimeout(function () {
                 app.receivedEvent('deviceready');
                 navigator.splashscreen.hide();
@@ -66,9 +65,6 @@ var app = {
                         log("Error authenticating with Facebook");
                     }
                 }
-
-                log("Scanning Started...");
-                
             }, 2000);
         } catch (e) {
             log(e);
