@@ -23,7 +23,7 @@ var beaconService = {
 
             EstimoteBeacons.requestAlwaysAuthorization(requestInUseAuthorization, log);
 
-            if (!wasAuthorizationCalled) {
+            if (!self.wasAuthorizationCalled) {
                 startScanningForBeacons();
             }
         } catch (e) {
@@ -31,7 +31,7 @@ var beaconService = {
         }
 
         function requestInUseAuthorization() {
-            wasAuthorizationCalled = true;
+            self.wasAuthorizationCalled = true;
             EstimoteBeacons.requestWhenInUseAuthorization(startScanningForBeacons,log);
         }
 
