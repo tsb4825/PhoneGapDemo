@@ -39,7 +39,10 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" />
-	<gap:plugin name="ptdev.makingwaves2.estimotes" />
+	  <gap:plugin name="ptdev.makingwaves2.estimotes" />
+    <gap:plugin name="cordova-plugin-ms-azure-mobile-engagement" source="npm">
+      <param name="AZME_IOS_CONNECTION_STRING" value="Endpoint=DeDemo-TestApp-Collection.device.mobileengagement.windows.net;SdkKey=63a56f37056f8f960a39fbeafa8f15c7;AppId=cud000012" />
+    </gap:plugin>
     <icon src="res/icon/ios/mercedes-benz-logo180x180.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
