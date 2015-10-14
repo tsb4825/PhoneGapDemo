@@ -47,6 +47,12 @@ var app = {
                          log("Azure activity failed: " + e);
                     });
 
+                cordova.plugins.notification.local.on("trigger", function(notification) {
+                    cordova.plugins.notification.local.clear(1, function() {
+                        log("Alert cleared");
+                    });
+                });
+
                 //https://github.com/studiosoton/faceGap
                 //Config Plugin
                 var config = {
